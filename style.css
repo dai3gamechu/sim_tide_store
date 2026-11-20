@@ -1,0 +1,135 @@
+
+:root{font-family:system-ui,"Yu Gothic",Meiryo,sans-serif;background:#f5f1e9;color:#382b21}*{box-sizing:border-box}body{margin:0}main{max-width:1260px;margin:auto;padding:16px 14px 42px}h1{font-size:clamp(21px,2.6vw,29px);margin:0 0 3px;color:#48321f}h2{font-size:17px;margin:0 0 11px}.muted{color:#776d63}.small{font-size:12px}.head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 13px}.panel{background:#fffdf8;border:1px solid #d9c9b5;border-radius:12px;padding:14px;margin-bottom:12px;box-shadow:0 2px 8px #4f39220b}.settings{display:grid;grid-template-columns:1fr 1fr;gap:12px}.chips,.actions{display:flex;gap:7px;flex-wrap:wrap}.chip,.btn{border:1px solid #c4b298;background:#f4e9d8;color:#493424;border-radius:8px;padding:7px 11px;cursor:pointer;font-weight:600}.chip.active,.btn.primary{background:#93663d;color:white;border-color:#93663d}.btn:hover,.chip:hover{filter:brightness(.96)}label{display:block;margin-bottom:4px;font-size:12px;color:#6d6053}.switch{display:flex;align-items:center;gap:7px;margin:0;cursor:pointer}.switch input{accent-color:#986a3c;width:16px;height:16px}input[type=number],#searchText,.toolbar select{min-width:0;border-radius:7px;border:1px solid #c6b49e;color:#382b21;background:white;padding:7px 9px;font-size:15px}input[type=number]{width:100%}#budget{max-width:200px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.stat{background:#f5ecdf;border:1px solid #e6d7c3;padding:10px;border-radius:8px}.stat b{display:block;font-size:clamp(18px,2.3vw,26px);margin-top:4px;font-variant-numeric:tabular-nums}.green{color:#287b54}.red{color:#be3535}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:12px}#searchText{width:220px}.catalog{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.item{display:flex;gap:9px;min-width:0;padding:9px;background:#fcf9f3;border:1px solid #dfd0bb;border-radius:9px}.item.locked{background:#eee9e2}.item.locked .itemimg{filter:grayscale(.8);opacity:.6}.itemimg{width:65px;height:65px;object-fit:cover;flex:0 0 65px;border:1px solid #c9b296;border-radius:7px;background:#e9dfd1}.itemimg.fallback{object-fit:contain}.itembody{flex:1;min-width:0}.itop{display:flex;justify-content:space-between;gap:6px}.iname{font-weight:700;font-size:13px;line-height:1.35;overflow-wrap:anywhere}.sub{font-size:11px;color:#736556;margin:3px 0 7px}.tag{font-size:10px;border-radius:5px;padding:3px 5px;background:#e9ddca;color:#715236;white-space:nowrap;height:max-content}.itemcontrols{display:grid;grid-template-columns:1fr 1fr;gap:8px}.quantity{display:flex;align-items:center;justify-content:space-between;background:#f0e9df;border:1px solid #e0d2be;border-radius:7px;padding:2px;gap:2px;height:34px}.quantity button{flex:0 0 28px;height:28px;background:#a6794b;color:white;border:0;border-radius:5px;font-size:19px;cursor:pointer}.quantity button:disabled{opacity:.25;cursor:not-allowed}.quantity strong{font-size:13px;font-variant-numeric:tabular-nums}.itemfoot{font-size:11px;text-align:right;color:#76583b;margin-top:5px}.notice{color:#856320;font-size:12px;margin-top:10px}.summary{overflow:auto}.summary table{width:100%;border-collapse:collapse;font-size:13px}.summary th,.summary td{padding:8px;border-bottom:1px solid #e3d8c9;text-align:left}.summary th:nth-child(n+2),.summary td:nth-child(n+2){text-align:right;white-space:nowrap}.empty{text-align:center;color:#83796c;padding:15px}.footer{color:#756a5e;font-size:12px;line-height:1.7}.warn{background:#ffe8e2;color:#a9271b;padding:9px;border-radius:7px;margin-top:9px}.hint{font-size:11px;color:#7c6f62}.only-mobile{display:none}@media(max-width:1060px){.catalog{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){main{padding:10px 8px 30px}.settings{grid-template-columns:1fr}.catalog{grid-template-columns:1fr}.panel{padding:11px}.itemimg{width:56px;height:56px;flex-basis:56px}.stats{gap:4px}.stat{padding:7px}.stat b{font-size:17px}.toolbar{justify-content:flex-start}.item{padding:8px}.itemcontrols{gap:5px}.quantity button{flex-basis:30px}}
+
+/* v0.4: legible, compact controls with distinct roles */
+body{font-size:15px}
+h2{font-size:20px;line-height:1.35}
+label{font-size:14px}
+.small,.notice,.footer{font-size:13px}
+.muted{line-height:1.55}
+.item{position:relative;padding:10px;transition:background .16s,border-color .16s,opacity .16s}
+.iname{font-size:15px;line-height:1.4}
+.itemimg{width:68px;height:68px;flex-basis:68px}
+.sub{display:flex;align-items:baseline;gap:10px;margin:5px 0 8px;color:#635244;font-size:13px;flex-wrap:wrap}
+.price{font-size:18px;color:#583a22;font-variant-numeric:tabular-nums;line-height:1}
+.price small{font-size:12px;font-weight:600}
+.limit{font-size:13px}
+.tag{font-size:11px}
+.itemcontrols label{margin-bottom:5px;font-size:13px;font-weight:700}
+.itemcontrols{gap:8px}
+.quantity{height:38px;padding:3px}
+.quantity button{flex-basis:31px;height:30px;font-size:20px}
+.quantity strong{font-size:19px;line-height:1;font-weight:750}
+.bought-control label{color:#536777}
+.bought-control .quantity{background:#e5eaed;border-color:#c9d5dc}
+.bought-control .quantity button{background:#657c8d}
+.plan-control label{color:#9b5b21}
+.plan-control .quantity{background:#f9ead3;border-color:#e1be88}
+.plan-control .quantity button{background:#be7736}
+.quantity button:disabled{opacity:.25}
+.item.complete{background:#f0efeb;border-color:#d3d0c8}
+.item.complete .itemimg{filter:grayscale(.75);opacity:.65}
+.item.complete .iname,.item.complete .sub{color:#79766e}
+.item.complete .price{color:#79766e}
+.item.complete .quantity{filter:saturate(.65)}
+.done-label{font-size:11px;background:#e1e4df;color:#506554;border-radius:5px;padding:3px 5px;white-space:nowrap;height:max-content}
+.itop{flex-wrap:wrap}
+.itop .iname{flex:1;min-width:110px}
+.stats .small{font-size:13px}
+.summary table{font-size:15px}
+.summary th,.summary td{padding:10px 8px}
+.btn,.chip{font-size:14px}
+@media(max-width:640px){h2{font-size:19px}.item{padding:9px}.itemimg{width:61px;height:61px;flex-basis:61px}.iname{font-size:15px}.quantity strong{font-size:19px}.itemcontrols label{font-size:13px}.price{font-size:18px}}
+
+/* v0.5: readable settings, modest height, consistent touch targets */
+.settings .panel>label:not(.switch){font-size:16px;font-weight:700;color:#574332;margin-bottom:8px}
+#budget{max-width:245px;min-height:47px;padding:7px 12px;font-size:23px;font-weight:750;font-variant-numeric:tabular-nums;border-width:1.5px}
+.settings .switch{font-size:16px;font-weight:650;color:#554336;gap:10px;line-height:1.45}
+.settings .switch input{width:21px;height:21px;flex:0 0 21px;cursor:pointer}
+.settings .chips{gap:9px}
+.settings .chip{font-size:16px;font-weight:750;padding:10px 14px;min-height:44px;border-radius:9px}
+.settings .panel .small.muted{font-size:14px;line-height:1.6}
+.settings .stat .small{font-size:14px}
+@media(max-width:640px){.settings .panel>label:not(.switch){font-size:16px}#budget{font-size:22px;max-width:100%}.settings .chip{font-size:15px;padding:10px 12px}.settings .switch{font-size:16px}}
+
+/* v0.6: quick quantity controls */
+.plan-shortcuts{display:flex;gap:5px;margin-top:5px}
+.plan-shortcuts button{flex:1;border:1px solid #dbbd94;background:#fff5e6;color:#895522;border-radius:5px;min-height:28px;padding:2px 4px;font-size:12px;font-weight:800;cursor:pointer}
+.plan-shortcuts button:hover:not(:disabled){background:#fbe2be}
+.plan-shortcuts button:disabled{opacity:.4;cursor:not-allowed}
+.toolbar-reset{margin-left:auto;background:#fff9ef;border-color:#b78655;color:#74451c}
+@media(max-width:640px){.plan-shortcuts button{font-size:13px;min-height:30px}.toolbar-reset{font-size:13px}}
+
+/* v0.7: both quantities are directly editable and have shortcuts */
+.quantity input.count-input{width:clamp(34px,3.6vw,58px);min-width:0;flex:1;border:0;outline:none;background:transparent;text-align:center;font-size:19px;font-weight:750;color:#382b21;padding:0 1px;height:30px;font-variant-numeric:tabular-nums;appearance:textfield;-moz-appearance:textfield}
+.quantity input.count-input::-webkit-inner-spin-button,.quantity input.count-input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.quantity input.count-input:focus{background:#fffdf8;box-shadow:inset 0 0 0 2px #8b7660;border-radius:4px}
+.bought-control .quantity input.count-input{color:#344957}
+.plan-control .quantity input.count-input{color:#895522}
+.bought-control .plan-shortcuts button{background:#eef3f6;color:#536777;border-color:#b9cbd6}
+.bought-control .plan-shortcuts button:hover:not(:disabled){background:#dae7ee}
+.itemcontrols .quantity button{flex:0 0 30px}
+@media(max-width:640px){.quantity input.count-input{font-size:19px}.itemcontrols .quantity button{flex-basis:29px}}
+
+/* v0.9: Spending limit toggle and raid reward planning */
+.modebar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:12px 0 8px;padding:10px 12px;background:#f5ecdf;border-radius:9px;border:1px solid #e0cfb8}
+.modebar strong{font-size:16px}.modebar .chips{margin-left:auto}
+.modebar .chip{font-size:15px}.modehelp{font-size:13px;color:#675746;line-height:1.6}
+.goalbox{margin-top:12px;padding:13px;background:#f4efe6;border:1px solid #dec9aa;border-radius:9px}
+.goalbox h3{font-size:17px;margin:0 0 9px}.goalgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.goalmetric{padding:11px;background:#fffaf2;border-radius:8px;border:1px solid #e8d8c0}.goalmetric strong{display:block;font-size:23px;margin-top:5px;font-variant-numeric:tabular-nums}.goalnote{font-size:13px;color:#716251;line-height:1.65;margin:9px 0 0}
+@media(max-width:640px){.modebar .chips{margin-left:0}.goalgrid{grid-template-columns:1fr}.goalmetric strong{font-size:21px}}
+
+
+/* DLS TOOL HUB shared two-theme treatment. No simulator calculations changed. */
+html {background:#191b1f;} html:has(body[data-theme="light"]) {background:#f2f3f5;} body { background:#191b1f; color:#e7e8eb; min-height:100vh; }
+body[data-theme="dark"] {color-scheme:dark; --st-bg:#191b1f;--st-card:#25272c;--st-border:#41454d;--st-text:#e7e8eb;--st-muted:#b1bac6;--st-field:#303238;--st-soft:#303238;--st-sub:#343840;--st-accent:#237d87;--st-accent-hover:#30919b;--st-line:#454a53;--st-blue:#394b56;--st-blue-border:#577283;--st-orange:#50402e;--st-orange-border:#967044;--st-warn:#50312d;--st-warntext:#ffb6aa;}
+body[data-theme="light"] {color-scheme:light;--st-bg:#f2f3f5;--st-card:#ffffff;--st-border:#d5d8dd;--st-text:#25272b;--st-muted:#626d7c;--st-field:#ffffff;--st-soft:#f4f5f7;--st-sub:#edf1f4;--st-accent:#237d87;--st-accent-hover:#30919b;--st-line:#dfe3e8;--st-blue:#e6edf1;--st-blue-border:#c9d5dc;--st-orange:#faeddc;--st-orange-border:#e1be88;--st-warn:#ffe8e2;--st-warntext:#a9271b;}
+html[data-dls-initial-theme="light"] body:not([data-theme]) {background:#f2f3f5;color:#25272b;}
+body[data-theme] {background:var(--st-bg);color:var(--st-text);}
+.store-app {max-width:1260px;margin:auto;padding:24px 14px 42px;}
+.store-app .store-heading {display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin:0 0 22px;}
+.store-app .store-heading-text {min-width:0;}
+.store-app .store-heading h1 {color:var(--st-text);font-size:clamp(23px,2.6vw,31px);margin:0 0 5px;text-align:left;}
+.store-app .store-version {font-size:13px;font-weight:650;color:var(--st-muted);margin:0 0 12px;}
+.store-app .store-description {font-size:14px;color:var(--st-muted);line-height:1.7;margin:0;}
+.store-app .store-video-link {display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap;flex-shrink:0;background:var(--st-sub);border:1px solid var(--st-blue-border);border-radius:9px;padding:11px 15px;color:var(--st-text);font-weight:750;font-size:13px;text-decoration:none;}
+.store-app .store-video-link:hover {background:var(--st-blue);}
+.store-app .store-video-link:focus-visible {outline:2px solid #79c7d3;outline-offset:2px;}
+.store-app .panel {background:var(--st-card);border-color:var(--st-border);box-shadow:0 8px 24px #00000012;}
+.store-app h1,.store-app h2,.store-app h3 {color:var(--st-text);}
+.store-app .muted,.store-app .small.muted,.store-app .footer,.store-app .hint,.store-app label,.store-app .settings .panel>label:not(.switch),.store-app .settings .switch,.store-app .itemcontrols label,.store-app .sub,.store-app .limit,.store-app .goalnote,.store-app .modehelp,.store-app .notice,.store-app .empty {color:var(--st-muted);}
+.store-app .panel,.store-app .item,.store-app .modebar,.store-app .goalbox,.store-app .goalmetric,.store-app .stat,.store-app .quantity,.store-app .item.locked,.store-app .item.complete {border-color:var(--st-border);}
+.store-app .item,.store-app .goalmetric,.store-app .stat,.store-app .goalbox,.store-app .modebar {background:var(--st-soft);}
+.store-app .item.locked,.store-app .item.complete {background:var(--st-sub);}
+.store-app .stat,.store-app .goalmetric {background:var(--st-soft);}
+.store-app .quantity,.store-app .itemimg {background:var(--st-field);border-color:var(--st-border);}
+.store-app .itemimg {object-fit:cover;}
+.store-app .tag,.store-app .done-label {background:var(--st-sub);color:var(--st-muted);}
+.store-app .iname,.store-app .price,.store-app .item.complete .iname,.store-app .item.complete .price,.store-app .item.complete .sub,.store-app .itemfoot {color:var(--st-text);}
+.store-app .item.complete .iname,.store-app .item.complete .price,.store-app .item.complete .sub {opacity:.62;}
+.store-app input[type=number],.store-app #searchText,.store-app .toolbar select,.store-app .quantity input.count-input {color:var(--st-text);background:var(--st-field);border-color:var(--st-border);}
+.store-app .quantity input.count-input {background:transparent;}
+.store-app .quantity input.count-input:focus {background:var(--st-field);box-shadow:inset 0 0 0 2px #6cb6c0;}
+.store-app .chip,.store-app .btn,.store-app .plan-shortcuts button {background:var(--st-sub);color:var(--st-text);border-color:var(--st-border);}
+.store-app .chip.active,.store-app .btn.primary {background:var(--st-accent);color:white;border-color:var(--st-accent);}
+.store-app .toolbar-reset {background:var(--st-sub);color:var(--st-text);border-color:var(--st-border);}
+.store-app .settings .switch input {accent-color:var(--st-accent);}
+.store-app .bought-control>label {color:var(--st-muted);}
+.store-app .bought-control .quantity {background:var(--st-blue);border-color:var(--st-blue-border);}
+.store-app .bought-control .quantity button {background:#577d94;color:#fff;}
+.store-app .bought-control .quantity input.count-input {color:var(--st-text);}
+.store-app .bought-control .plan-shortcuts button {background:var(--st-blue);border-color:var(--st-blue-border);color:var(--st-text);}
+.store-app .plan-control>label {color:var(--st-muted);}
+.store-app .plan-control .quantity {background:var(--st-orange);border-color:var(--st-orange-border);}
+.store-app .plan-control .quantity button {background:#a26e36;color:#fff;}
+.store-app .plan-control .quantity input.count-input {color:var(--st-text);}
+.store-app .plan-control .plan-shortcuts button {background:var(--st-orange);border-color:var(--st-orange-border);color:var(--st-text);}
+.store-app .summary th,.store-app .summary td {border-bottom-color:var(--st-line);}
+.store-app .green {color:#55b991;}.store-app .red {color:#ff8a8a;}
+body[data-theme="light"] .store-app .green {color:#287b54;}
+body[data-theme="light"] .store-app .red {color:#be3535;}
+.store-app .warn {background:var(--st-warn);color:var(--st-warntext);}
+.store-app .modebar strong,.store-app .goalbox h3,.store-app .goalmetric strong {color:var(--st-text);}
+.store-app .store-version-footer {text-align:center;font-size:12px;color:var(--st-muted);margin:25px 0 0;}
+@media(max-width:640px){.store-app{padding:18px 9px 30px;}.store-app .store-heading{flex-direction:column;gap:12px;}.store-app .store-video-link{align-self:flex-start;}.store-app .store-heading h1{font-size:24px;}}
+
