@@ -84,19 +84,19 @@ function renderCatalog(){
  }
 }
 function raidGoal(needed){
- // 潮流ストアも孤島レイドと同じ報酬段階として試算
+ // 潮流イベント専用の報酬段階で試算（孤島レイドとは初期段階が異なる）
  if(needed<=0)return {m:0,reward:0};
- const steps=[[0.7,45],[2.7,90],[6,140],[10,190]];
+ const steps=[[0.7,30],[2.7,70],[6,120],[10,200]];
  for(const [m,reward] of steps){if(needed<=reward)return {m,reward}}
- const n=Math.ceil((needed-190)/500);
- return {m:10+5*n,reward:190+500*n};
+ const n=Math.ceil((needed-200)/500);
+ return {m:10+5*n,reward:200+500*n};
 }
 function rewardForRaidM(m){
  if(m<0.7)return 0;
- if(m<2.7)return 45;
- if(m<6)return 90;
- if(m<10)return 140;
- return 190+500*Math.floor((m-10)/5);
+ if(m<2.7)return 30;
+ if(m<6)return 70;
+ if(m<10)return 120;
+ return 200+500*Math.floor((m-10)/5);
 }
 function targetWithUnlock(needed,includeBought){
  const g=raidGoal(needed);
